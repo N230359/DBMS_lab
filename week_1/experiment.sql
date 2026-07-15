@@ -113,6 +113,23 @@ insert into tax_office(office_id,office_name,city)
 truncate  tax_office;
 drop table tax_office;
 
+#Experiment 1
+insert into taxpayer(taxpayer_id,pan_number,full_name,date_of_birth,occupation,annual_income,email,is_active)
+		values(101,'GFUI6785T','Ganpat Sharma','2005-04-16','Health Assisstant','350000.00','ganpatsingh@example.com',True);
+		# shows error because there is already data exist eith the same tax_payer id 
+
+#Experiment 2
+insert into taxpayer(taxpayer_id,pan_number,full_name,date_of_birth,occupation,annual_income,email,is_active)
+	values(107,'ABCDE1234F','Ganpat Sharma','2005-04-16','Health Assisstant','350000.00','ganpatsingh@example.com',True);
+    #shows error because there already exist eith same pan number. we can't duplicate the unique constraints
+    
+#Experiment 3
+insert into taxpayer(taxpayer_id,pan_number,full_name,date_of_birth,occupation,annual_income,email,is_active)
+	values(107,'ABCDE1234F','2005-04-16','Health Assisstant','350000.00','ganpatsingh@example.com',True);
+	# shows error because we should not leave in the not null constraint .
+
+
+select * from taxpayer;
 
                         
 
